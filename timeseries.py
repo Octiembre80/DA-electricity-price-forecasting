@@ -33,16 +33,16 @@ def replace_outliers(data, column, tolerance):
     """Replace outliers out of 75% + tolerance * IQR or 25% - tolerance * IQR by 75%/25% quantile values"""
     
     tol = tolerance
-    data_prep = pd.DataFrame(index=data.index)
+    data_prep = data.copy(deep=True)
     
     # calculate quantiles and inter-quantile range of the data
-    q75 = data[column].quantile(.75)
-    q25 = data[column].quantile(.25)
+    q75 = data_prep[column].quantile(.75)
+    q25 = data_prep[column].quantile(.25)
     IQR = q75 - q25
 
     # values larger (smaller) than q75 (q25) plus 'tol' times IQR get replaced by that value
-    data_prep[column] = data[column].apply(lambda x: q75 + tol * IQR if (x > q75 + tol * IQR) else x)
-    data_prep[column] = data[column].apply(lambda x: q25 - tol * IQR if (x < q75 - tol * IQR) else x)
+    data_prep[column] = data_prep[column].apply(lambda x: q75 + tol * IQR if (x > q75 + tol * IQR) else x)
+    data_prep[column] = data_prep[column].apply(lambda x: q25 - tol * IQR if (x < q75 - tol * IQR) else x)
     
     return data_prep
 
