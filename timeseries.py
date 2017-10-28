@@ -9,18 +9,18 @@ def plot_average_prices(data):
     
     """Plot monthly, daily and hourly averages of input data."""
     
-    f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 8), sharey=True)
+    f, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(12, 6), sharey=True)
     data.groupby(data.index.month).mean().plot(ax=ax1, drawstyle='steps')
-    ax1.set_title('Monthly Average Day-Ahead Prices', fontsize=14)
+    ax1.set_title('Monthly Average', fontsize=14)
     ax1.set_ylabel('Day-Ahead price in €/MWh', fontsize=14)
     ax1.set_xlabel('Month of the year', fontsize=14)
     data.groupby(data.index.dayofweek).mean().plot(ax=ax2, drawstyle='steps')
-    ax2.set_title('Average Day-Ahead Prices for each weekday', fontsize=14)
+    ax2.set_title('Weekly Average', fontsize=14)
     ax2.set_ylabel('Day-Ahead price in €/MWh', fontsize=14)
     ax2.set_xlabel('Day of the week', fontsize=14)
     data.groupby(data.index.hour).mean().plot(ax=ax3, drawstyle='steps')
-    ax3.set_title('Hourly Average Day-Ahead Prices', fontsize=14)
-    ax3.set_ylabel('Day-Ahead price in €/MWh', fontsize=14)
+    ax3.set_title('Hourly Average', fontsize=14)
+    ax3.set_ylabel('Average Day-Ahead price in €/MWh', fontsize=14)
     ax3.set_xlabel('Hour of the day', fontsize=14)
     
     ax1.legend().set_visible(False)
@@ -30,7 +30,7 @@ def plot_average_prices(data):
     
 def replace_outliers(data, column, tolerance):
 
-    """Replace outliers out of 75% + tolerance * IQR or 25% - tolerance * IQR by 75%/25% quantile values"""
+    """Replace outliers out of 75% + tolerance * IQR or 25% - tolerance * IQR by these thresholds"""
     
     tol = tolerance
     data_prep = data.copy(deep=True)
