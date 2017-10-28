@@ -8,11 +8,13 @@ The final model developed in this project consists of four different code module
 * `multivariate_timeseries.ipynb` (not successful, primarily included for completeness)
 * `renewables_model.ipynb`
 * `linear_model.ipynb`
+
 The first two modules produce interim results that are used as inputs for th `linear_model.ipynb` ('bottleneck features'). To follow along with the development process it is recommended to view the modules in the order above. Each module is also provided as an .html file.
 
 The files
 * `timeseries.py`
 * `renewables.py`
+
 contain additional functions that are used by the primary modules.
 
 The script `grab_weather_data.py` can be used to obtain the original weather data used in this project. Running this script takes about 36 hours. Weather data is provided in a more convenient, preprocessed if you want to rerun the code in the modules that rely on this data. Please refer to the Datasets section of this readme.
