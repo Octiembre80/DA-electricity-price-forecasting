@@ -9,7 +9,7 @@ The final model developed in this project consists of four different code module
 * `renewables_model.ipynb`
 * `linear_model.ipynb`
 
-The first two modules produce interim results that are used as inputs for `linear_model.ipynb` ('bottleneck features'). To follow along with the development process it is recommended to view the modules in the order above. Each module is also provided as an .html file.
+The first two modules produce interim results that are used as inputs for `linear_model.ipynb` ('bottleneck features'). To follow along with the development process it is recommended to view the modules in the order above. Each module is also provided as an .html file. The final models developed in these modules are stored as .hdf5 files in /models/final_models. These files can be loaded for evaluating the model performance without having to retrain the individual models.
 
 The files
 * `timeseries.py`
