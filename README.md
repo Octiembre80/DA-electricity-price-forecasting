@@ -3,9 +3,9 @@ Welcome to the repository for my Udacity Machine Learning Nanodegree final proje
 # Files
 The main output of this project is a 25 pages report containing an in-depth explanation and description of the whole project development process and the final results. Refer to `Report.pdf` to view the whole report.
 
-The final model developed in this project consists of three different code modules:
+The final model developed in this project consists of four different code modules:
 * `timeseries_model.ipynb`
-* `multivariate_timeseries.ipynb`
+* `multivariate_timeseries.ipynb` (not successful, primarily included for completeness)
 * `renewables_model.ipynb`
 * `linear_model.ipynb`
 The first two modules produce interim results that are used as inputs for th `linear_model.ipynb` ('bottleneck features'). To follow along with the development process it is recommended to view the modules in the order above. Each module is also provided as an .html file.
