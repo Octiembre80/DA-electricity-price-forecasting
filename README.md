@@ -41,8 +41,10 @@ Iris requires the external GRIP API to access .grib binary files. The documentat
 # Datasets
 All necessary datasets are provided within this repository, except for the weather used as an input for one module. The downloaded and formatted weather dataset has a size of 10GB. A ready-to-use version is provided under the following link:
 
+https://drive.google.com/open?id=0B-Hy8P9Z0SXWM1FGelI0SU5RRmM
+
 If you want to rerun the training of the `renewables_model.ipynb` notebook, which rely on that dataset, please download this file and unpack all data to /processed_data/weather
 
-The data is stored in numpy binary objects. To aquire the acutal raw data from the original source, please refer to the script `grab_weather_data.py`.
+The data is stored in numpy binary objects. To aquire the acutal raw, unprocessed weather data from the original source, please refer to the script `grab_weather_data.py`.
 
 All other data is stored in the /raw_data and /processed_data directories.
