@@ -39,9 +39,9 @@ To install iris, please refer to http://scitools.org.uk/iris/docs/latest/install
 Iris requires the external GRIP API to access .grib binary files. The documentation for that dependencies can be found under https://software.ecmwf.int/wiki/display/GRIB/Home . Warning: Installing the grib api can be a real pain. I tried several tutorials and recommendations. The one that finally solved the installation problems can be found under https://ubuntuforums.org/showthread.php?t=2060457 
 
 # Datasets
-All necessary datasets are provided within this repository, except for the weather used as an input for one module. The full formatted weather dataset has a size of 10GB. It is provided under the following link:
+All necessary datasets are provided within this repository, except for the weather used as an input for one module. The downloaded and formatted weather dataset has a size of 10GB. A ready-to-use version is provided under the following link:
 
-If you want to rerun parts of the code that rely on that dataset, please download this file and unpack all data to /processed_data/weather
+If you want to rerun the training of the `renewables_model.ipynb` notebook, which rely on that dataset, please download this file and unpack all data to /processed_data/weather
 
 The data is stored in numpy binary objects. To aquire the acutal raw data from the original source, please refer to the script `grab_weather_data.py`.
 
