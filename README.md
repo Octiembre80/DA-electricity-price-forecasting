@@ -17,7 +17,7 @@ The files
 
 contain additional functions that are used by the primary modules.
 
-The script `grab_weather_data.py` can be used to obtain the original weather data used in this project. Running this script takes about 36 hours. Weather data is provided in a more convenient, preprocessed if you want to rerun the code in the modules that rely on this data. Please refer to the Datasets section of this readme.
+The script `grab_weather_data.py` can be used to obtain the original weather data used in this project. Running this script takes about 36 hours. Weather data is provided in a more convenient, preprocessed format if you want to rerun the code in the modules that rely on this data. Please refer to the Datasets section of this readme.
 
 The file `data_preprocessing.ipynb` contains the code used for preprocessing raw generation and load forecast data.
 
