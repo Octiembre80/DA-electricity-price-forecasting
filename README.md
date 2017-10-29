@@ -43,7 +43,7 @@ All necessary datasets are provided within this repository, except for the weath
 
 https://drive.google.com/open?id=0B-Hy8P9Z0SXWM1FGelI0SU5RRmM
 
-If you want to rerun the training of the `renewables_model.ipynb` notebook, which rely on that dataset, please download this file and unpack all data to /processed_data/weather
+If you want to rerun the training of the `renewables_model.ipynb` notebook, which relies on that dataset, please download this file and unpack all data to /processed_data/weather
 
 The data is stored in numpy binary objects. To aquire the acutal raw, unprocessed weather data from the original source, please refer to the script `grab_weather_data.py`.
 
