@@ -11775,15 +11775,15 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>In this notebook we will develop a model to predict the hourly generation of solar and wind power in the German bidding zone (DE-AT-LU). The models will feed on two-dimensional grid weather data from a cosmological reanalysis from the year 2015 by the German National Weather Agency (DWD). The predicted data will be the true hourly generation output of the respective technologies in the German bidding zone, available from the German Transmission system operators.</p>
+<h1 id="0.-Introduction">0. Introduction<a class="anchor-link" href="#0.-Introduction">&#182;</a></h1><p>In this notebook we will develop a model to predict the hourly generation of solar and wind power in the German bidding zone (DE-AT-LU). The models will feed on two-dimensional grid weather data from a cosmological reanalysis from the year 2015 by the German National Weather Agency (DWD). The predicted data will be the true hourly generation output of the respective technologies in the German bidding zone, available from the German Transmission system operators.</p>
 <blockquote><p><strong>Note</strong>: The datasets used in this model are quite big (~10GB in total). Running parts of this notebook will require large amounts of memory to keep the respective numpy arrays in memory. All of this code has been executed on a AWS p2.xlarge instance with 64GB of RAM. The minimum memory required is unknown. 8GB is certainly not enough...</p>
 <p><strong>Note</strong>: Weather data is originally provided in the .grib format. There are python libraries to handle .grib files, in this case the iris library was used. Installing this module and the respective dependencies is a pain. Thus, all data is preprocessed and saved as binary numpy arrays. However, to execute the iris code in this notebook (optional, for exemplary purposes only!), you will have to install the library first. The best option would be to have a separate environment for iris, since it requires python 2.6. You will have to execute the optional part of this notebook with the iris-environment. The rest of the notebook requires keras und python 3.6+. This is a bit inconvenient but necessary for explanatory purposes.</p>
 </blockquote>
 <h2 id="Contents">Contents<a class="anchor-link" href="#Contents">&#182;</a></h2><ul>
-<li><a href="#step0">Step 0</a>: Visualize grid weather data with iris (optional)</li>
-<li><a href="#step1">Step 1</a>: Preprocess data</li>
-<li><a href="#step2">Step 2</a>: Train a neural network for solar power generation</li>
-<li><a href="#step3">Step 3</a>: Train a neural network for wind power generation</li>
+<li><a href="#step0">Step 1</a>: Visualize grid weather data with iris (optional)</li>
+<li><a href="#step1">Step 2</a>: Preprocess data</li>
+<li><a href="#step2">Step 3</a>: Train a neural network for solar power generation</li>
+<li><a href="#step3">Step 4</a>: Train a neural network for wind power generation</li>
 </ul>
 <hr>
 
@@ -11795,7 +11795,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='step0'></a></p>
-<h1 id="Visualize-grid-weather-data-with-iris-(optional)">Visualize grid weather data with iris (optional)<a class="anchor-link" href="#Visualize-grid-weather-data-with-iris-(optional)">&#182;</a></h1>
+<h1 id="1.-Visualize-grid-weather-data-with-iris-(optional)">1. Visualize grid weather data with iris (optional)<a class="anchor-link" href="#1.-Visualize-grid-weather-data-with-iris-(optional)">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -16399,7 +16399,7 @@ EZEM+v+SMuSr+W2UyQAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='step1'></a></p>
-<h1 id="Preprocess-data">Preprocess data<a class="anchor-link" href="#Preprocess-data">&#182;</a></h1>
+<h1 id="2.-Preprocess-data">2. Preprocess data<a class="anchor-link" href="#2.-Preprocess-data">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -16411,14 +16411,6 @@ EZEM+v+SMuSr+W2UyQAAAABJRU5ErkJggg==
 <blockquote><p><strong>Note</strong>: The information used in these models is actually not available in a real world setting. What we do here is predicting <em>realized</em> generation levels based on <em>realized</em> (measured) weather conditions for every hour of a day. In a real world application we would have to predict <em>expected</em> generation levels based on <em>forecasted</em> weather conditions (e.g. by weather services). Since no historical weather forecasts are available, we have to use measured weather data to show the validity of the approach. However, it is not necessarily true, that the predictions in a real world setting with enough forecast data available will perform worse. If all market players use a similar weather forecast to base their expectation on, then this particular forecast will be as good for predicting expected generation as measured weather data is for realized generation. It is reasonable to assume that a model trained on measurement data is able to generalize to forecasting data, given the assumption that market players are, in general, doing a good job with their own models for predicting their individual expected generation.</p>
 </blockquote>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Imports">Imports<a class="anchor-link" href="#Imports">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -16643,7 +16635,7 @@ EZEM+v+SMuSr+W2UyQAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='step2'></a></p>
-<h1 id="Train-a-neural-network-for-solar-power-generation">Train a neural network for solar power generation<a class="anchor-link" href="#Train-a-neural-network-for-solar-power-generation">&#182;</a></h1>
+<h1 id="3.-Train-a-neural-network-for-solar-power-generation">3. Train a neural network for solar power generation<a class="anchor-link" href="#3.-Train-a-neural-network-for-solar-power-generation">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -21069,7 +21061,7 @@ RK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='step3'></a></p>
-<h1 id="Train-a-neural-network-for-wind-power-generation">Train a neural network for wind power generation<a class="anchor-link" href="#Train-a-neural-network-for-wind-power-generation">&#182;</a></h1>
+<h1 id="4.-Train-a-neural-network-for-wind-power-generation">4. Train a neural network for wind power generation<a class="anchor-link" href="#4.-Train-a-neural-network-for-wind-power-generation">&#182;</a></h1>
 </div>
 </div>
 </div>
