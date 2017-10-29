@@ -9,7 +9,7 @@ The final model developed in this project consists of four different code module
 * `renewables_model.ipynb`
 * `linear_model.ipynb`
 
-The first two modules produce interim results that are used as inputs for `linear_model.ipynb` ('bottleneck features'). To follow along with the development process it is recommended to view the modules in the order above. Each module is also provided as an .html file. The final models developed in these modules are stored as .hdf5 files in /models/final_models. These files can be loaded for evaluating the model performance without having to retrain the individual models.
+The first two modules produce interim results that are used as inputs for `linear_model.ipynb` ('bottleneck features'). **To follow along with the development process it is recommended to read the .ipynb module notebooks in the order above**. Each module is also provided as an .html file. The final models developed in these modules are stored as .hdf5 files in /models/final_models. These files can be loaded for evaluating the model performance without having to retrain the individual models.
 
 The files
 * `timeseries.py`
@@ -17,7 +17,7 @@ The files
 
 contain additional functions that are used by the primary modules.
 
-The script `grab_weather_data.py` can be used to obtain the original weather data used in this project. Running this script takes about 36 hours. Weather data is provided in a more convenient, preprocessed if you want to rerun the code in the modules that rely on this data. Please refer to the Datasets section of this readme.
+The script `grab_weather_data.py` can be used to obtain the original weather data used in this project. Running this script takes about 36 hours. Weather data is provided in a more convenient, preprocessed format if you want to rerun the code in the modules that rely on this data. Please refer to the Datasets section of this readme.
 
 The file `data_preprocessing.ipynb` contains the code used for preprocessing raw generation and load forecast data.
 
@@ -43,7 +43,7 @@ All necessary datasets are provided within this repository, except for the weath
 
 https://drive.google.com/open?id=0B-Hy8P9Z0SXWM1FGelI0SU5RRmM
 
-If you want to rerun the training of the `renewables_model.ipynb` notebook, which rely on that dataset, please download this file and unpack all data to /processed_data/weather
+If you want to rerun the training of the `renewables_model.ipynb` notebook, which relies on that dataset, please download this file and unpack all data to /processed_data/weather
 
 The data is stored in numpy binary objects. To aquire the acutal raw, unprocessed weather data from the original source, please refer to the script `grab_weather_data.py`.
 
